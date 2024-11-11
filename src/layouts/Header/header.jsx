@@ -4,6 +4,7 @@ import { Image, Typo, TextBox, Button } from "../../components/index.js";
 import { Row, Col } from "../index.js"
 import headerIcon from "../../assets/icons/dododocs_Icon.png"
 import useAuthStore from "../../store/authStore.js"
+
 import {
   SenHeader, LayoutHeaderWrapper, HeaderWrapper, IconHeader, SearchWrapper, IconHeaderButton,
   VerticalDivider, CategoryBox, LoginBtnBox, LoginValueBtn, LoginButton
@@ -159,7 +160,7 @@ const HomeHeader = ({ role }) => {
     <>
 
       <div ref={sentinelRef} style={{ position: 'absolute', top: '2.5dvh', height: '1px', width: '100%' }} />
-      <SenHeader data-scrolled={scrolled} isHome={location.pathname !== '/'}>
+      <SenHeader data-scrolled={scrolled}>
         {
           false ?
 
