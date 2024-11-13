@@ -4,7 +4,7 @@ import { Image, Typo, TextBox, Button } from "../../components/index.js";
 import { Row, Col } from "../index.js"
 import headerIcon from "../../assets/icons/dododocs_Icon.png"
 import { ReactComponent as SearchIcon } from '../../assets/svg/searchIcon.svg';
-
+import { userAPI } from "../../api/index.js"
 
 import {
   SenHeader, LayoutHeaderWrapper, HeaderWrapper, IconHeader, SearchWrapper, IconHeaderButton,
@@ -100,7 +100,8 @@ const HomeHeader = ({ role }) => {
   };
 
   const doingLogin = () => {
-    handleLoginModalOpen();
+    console.log("repo")
+    userAPI.getPreferences();
   }
 
 
@@ -199,7 +200,7 @@ const HomeHeader = ({ role }) => {
             <Col span={7} align={"center"}>
               <Row align={"center"}>
                 <Col xs={4} sm={3} span={3} align={"center"}>
-                  <Typo fontFamily={'Roboto'} weight={100} size={'32px'} isGradient>Dododocs</Typo>
+                  <Typo fontFamily={'Roboto'} weight={100} size={'32px'} $isGradient>Dododocs</Typo>
                 </Col>
                 <Col xs={8} sm={8} md={8} lg={8} xl={8} xxl={8} span={8} justify={"space-evenly"} align={"center"}>
                   <CategoryBox onClick={() => navigate("/docs")}>AI Code document</CategoryBox>
@@ -224,7 +225,7 @@ const HomeHeader = ({ role }) => {
                 <Col md={3} span={2}>
                   <Button onClick={doingLogin}
                     btnType={"gradientLine"} size={'large'} $bold
-                  >Repo 관리
+                  >Repo 관리!
                   </Button>
                 </Col>
               </Row>
